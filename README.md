@@ -1,4 +1,4 @@
-# 🔍 QA Flow Analyzer
+🔍 QA Flow Analyzer
 
 Uma ferramenta que criei para me ajudar no dia a dia como analista de QA.
 Você fornece um print ou vídeo de qualquer tela de sistema, informa os critérios
@@ -6,7 +6,7 @@ de aceite, e a IA analisa tudo como se fosse um QA olhando para aquela tela.
 
 ---
 
-## Como surgiu esse projeto
+🚀 Como surgiu esse projeto
 
 Trabalho como QA Analyst e sinto que a tecnologia pode tornar algumas análises
 mais ágeis e estruturadas. Decidi unir minha experiência em qualidade com
@@ -19,7 +19,19 @@ e casos de teste sugeridos.
 
 ---
 
-## ⚙️ Funcionalidades
+🎯 Objetivo
+
+Simular o olhar de um QA na validação de sistemas, garantindo:
+
+- Validação de critérios de aceite  
+- Identificação de problemas e inconsistências  
+- Detecção de riscos e possíveis bugs  
+- Sugestões de melhoria de usabilidade (UX)  
+- Apoio na criação de casos de teste  
+
+---
+
+⚙️ Funcionalidades
 
 - 📸 Análise de imagens (prints de sistemas)
 - 🎥 Análise de vídeos (fluxos completos)
@@ -36,7 +48,7 @@ e casos de teste sugeridos.
 
 ---
 
-## Tecnologias usadas
+🛠 Tecnologias utilizadas
 
 - Python 3.10+
 - Google Gemini API — IA com visão computacional
@@ -47,7 +59,8 @@ e casos de teste sugeridos.
 
 ---
 
-## Estrutura do projeto
+📁 Estrutura do projeto
+
 qa-flow-analyzer/
 │
 ├── 📁 imagens/        ← prints para análise
@@ -65,7 +78,7 @@ qa-flow-analyzer/
 
 ---
 
-## Como rodar
+▶️ Como executar
 
 **1. Clone o repositório:**
 ```bash
@@ -97,7 +110,7 @@ python -m streamlit run app_web.py
 
 ---
 
-## Exemplo de relatório gerado
+📄 Exemplo de relatório gerado
 
 A ferramenta analisa a tela e retorna algo assim:
 CRITÉRIOS ATENDIDOS
@@ -120,12 +133,12 @@ Prioridade: Alta
 
 Veja o projeto em funcionamento:
 
-👉 https://bit.ly/qa-flow-demo
+👉 [https://bit.ly/qa-flow-demo]
 
 ---
 
 ## Sobre mim
 
-**Luiza Nicácio** — QA Analyst  
-Transição de Biomedicina para Qualidade de Software  
-[linkedin.com/in/luizanicacio](https://linkedin.com/in/luizanicacio) •
+**Luiza Nicácio** - Analista de QA
+
+[linkedin.com/in/luizanicacio]
