@@ -131,9 +131,8 @@ Prioridade: Alta
 ---
 🎬 Demonstração do projeto
 
-Veja o projeto em funcionamento:
 
-👉 [https://bit.ly/qa-flow-demo]
+👉 [Veja o projeto em funcionamento](https://bit.ly/qa-flow-demo)
 
 ---
 
@@ -141,4 +140,4 @@ Veja o projeto em funcionamento:
 
 **Luiza Nicácio** - Analista de QA
 
-[linkedin.com/in/luizanicacio]
+[Linkedin](linkedin.com/in/luizanicacio)
