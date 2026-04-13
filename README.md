@@ -136,8 +136,8 @@ Prioridade: Alta
 
 ---
 
-## Sobre mim
+👩‍💻 Sobre mim
 
 **Luiza Nicácio** - Analista de QA
 
-[Linkedin](linkedin.com/in/luizanicacio)
+[LinkedIn](https://linkedin.com/in/luizanicacio)
