@@ -131,13 +131,12 @@ Prioridade: Alta
 ---
 🎬 Demonstração do projeto
 
-
 👉 [Veja o projeto em funcionamento](https://bit.ly/qa-flow-demo)
 
 ---
 
-👩‍💻 Sobre mim
+## 👩‍💻 Sobre mim
 
-**Luiza Nicácio** - Analista de QA
+**Luiza Nicácio** – Analista de QA
 
-[LinkedIn](https://linkedin.com/in/luizanicacio)
+🔗 [LinkedIn](https://linkedin.com/in/luizanicacio)
