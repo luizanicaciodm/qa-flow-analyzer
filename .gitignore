@@ -1,0 +1,10 @@
+# IMPORTANTE: esse arquivo protege sua chave de API
+.env
+__pycache__/
+*.pyc
+temp_frame_*.jpg
+temp_frame_*.png
+.DS_Store
+Thumbs.db
+venv/
+*.log

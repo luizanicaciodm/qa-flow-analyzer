@@ -1,0 +1,20 @@
+# ===============================
+# QA FLOW ANALYZER - REQUIREMENTS
+# ===============================
+
+# IA (Google Gemini)
+google-generativeai>=0.5.4
+
+# Interface Web
+streamlit>=1.32.0
+
+# Processamento de Imagem e Vídeo
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# Relatórios em PDF
+fpdf2>=2.7.0
+
+# Configuração e utilidades
+python-dotenv>=1.0.0
+requests>=2.31.0

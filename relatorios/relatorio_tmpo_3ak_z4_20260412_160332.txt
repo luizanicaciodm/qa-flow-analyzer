@@ -1,0 +1,100 @@
+============================================================
+RELATORIO QA - QA FLOW ANALYZER
+Arquivo: C:\Users\TRC602~3\AppData\Local\Temp\tmpo_3ak_z4.jpg
+Data: 12/04/2026 16:03
+============================================================
+
+CRITERIOS:
+Campo de e-mail deve ser obrigatório
+Botão entrar deve ficar verde após preencher campos
+Mensagem de erro ao login inválido
+
+============================================================
+ANALISE:
+============================================================
+
+## VISAO GERAL
+-   **Tipo de tela identificado:** Tela de Login/Autenticação de Usuário.
+-   **Objetivo da tela:** Permitir que usuários existentes acessem o sistema "Seu Barriga" através da inserção de suas credenciais (e-mail e senha).
+-   **Publico-alvo provavel:** Usuários cadastrados do sistema "Seu Barriga" que desejam acessar suas funcionalidades e dados.
+
+## CRITERIOS ATENDIDOS
+
+-   **Campo de e-mail deve ser obrigatório:** **NAO ATENDIDO**
+    *   **Justificativa visual:** A imagem não apresenta nenhum indicador visual (como um asterisco vermelho `*` ou a palavra "Obrigatório") que sinalize que o campo de e-mail é de preenchimento compulsório. Embora o campo esteja preenchido na imagem, não há evidência do comportamento esperado caso o usuário o deixe vazio.
+
+-   **Botão entrar deve ficar verde após preencher campos:** **NAO ATENDIDO**
+    *   **Justificativa visual:** Na imagem, os campos "Email" (`luiza@teste.com`) e "Senha" (`********`) estão claramente preenchidos. No entanto, o botão "Entrar" está visivelmente na cor azul, e não verde, contrariando diretamente o critério de aceitação.
+
+-   **Mensagem de erro ao login inválido:** **NAO ATENDIDO**
+    *   **Justificativa visual:** A imagem não exibe nenhuma mensagem de erro na tela. Considerando que o sistema está em uma tela de login com credenciais preenchidas, e o objetivo do critério é mostrar uma mensagem de erro em caso de login inválido, a ausência dessa mensagem na captura de tela atual significa que o critério não é visivelmente atendido. Poderia ser um cenário de login bem-sucedido (o que levaria a um redirecionamento e não a permanência na tela) ou um login falho sem feedback.
+
+## PROBLEMAS ENCONTRADOS
+
+-   **Severidade:** Baixo
+    -   **Descricao do problema:** O botão "Entrar" não altera sua cor para verde após os campos de e-mail e senha estarem preenchidos, permanecendo na cor azul.
+    -   **Impacto para o usuario:** Pequeno impacto na usabilidade e na experiência visual. Embora não impeça a submissão do formulário, a ausência da mudança de cor pode causar uma pequena confusão ou a sensação de que algo não está funcionando conforme o esperado, violando um feedback visual prometido.
+    -   **Criterio violado:** Botão entrar deve ficar verde após preencher campos.
+
+-   **Severidade:** Médio
+    -   **Descricao do problema:** Não há indicação visual na interface (ex: asterisco ou texto) de que o campo "Email" é obrigatório para o preenchimento.
+    -   **Impacto para o usuario:** Prejudica a usabilidade ao não informar o usuário sobre os campos mandatórios, podendo levá-lo a tentar submeter um formulário incompleto e receber um erro tardio. Isso pode gerar frustração e retrabalho.
+    -   **Criterio violado:** Campo de e-mail deve ser obrigatório (implicitamente pela falta de feedback visual).
+
+-   **Severidade:** Alto
+    -   **Descricao do problema:** A imagem não apresenta uma mensagem de erro para o cenário de um login inválido.
+    -   **Impacto para o usuario:** Impacto significativo na usabilidade e na experiência de recuperação de falhas. Em caso de credenciais incorretas, o usuário não receberá feedback sobre o motivo da falha, dificultando a correção (ex: e-mail errado, senha errada) e podendo levá-lo a abandonar a tentativa de login ou a contatar o suporte desnecessariamente.
+    -   **Criterio violado:** Mensagem de erro ao login inválido.
+
+## BUGS E RISCOS TECNICOS
+
+-   **Descricao do risco:** A lógica de validação do campo de e-mail como obrigatório pode estar ausente ou incorretamente implementada no frontend e/ou backend, permitindo a submissão do formulário com o campo vazio.
+    -   **Probabilidade:** Média (Baseado na falta de feedback visual na UI e a imagem ser estática, não permitindo interação.)
+    -   **Sugestao de teste:** Testar a submissão do formulário de login com o campo "Email" vazio para verificar se a validação frontend ocorre e se o backend rejeita a requisição, exibindo a mensagem de erro apropriada.
+
+-   **Descricao do risco:** O componente do botão "Entrar" pode ter um erro na sua lógica de estado ou no CSS/JavaScript que impede a mudança de cor para verde mesmo após os campos terem sido preenchidos.
+    -   **Probabilidade:** Alta (Diretamente observável na imagem, violando um critério de aceitação explícito.)
+    -   **Sugestao de teste:** Inspecionar os estilos CSS e o código JavaScript do botão para identificar o porquê da não aplicação da classe ou estilo `verde` após o preenchimento dos campos.
+
+-   **Descricao do risco:** O sistema pode não ter um mecanismo robusto para tratar e exibir mensagens de erro informativas para diferentes cenários de falha de autenticação (ex: e-mail não registrado, senha incorreta).
+    -   **Probabilidade:** Alta (A ausência de mensagem de erro na imagem sugere que este cenário não está sendo coberto ou é falho.)
+    -   **Sugestao de teste:** Testar o login com credenciais de usuário/senha incorretas, usuário inexistente e formatos de e-mail inválidos para verificar se as mensagens de erro adequadas são exibidas e se são claras para o usuário.
+
+## SUGESTOES DE MELHORIA
+
+-   **O que melhorar:** Adicionar um link "Esqueceu a senha?".
+    -   **Por que melhorar:** Aumenta a usabilidade para usuários que esqueceram suas credenciais, oferecendo uma rota de recuperação de acesso sem a necessidade de intervenção do suporte.
+    -   **Como implementar:** Criar um link "Esqueceu a senha?" abaixo do botão "Entrar" que direcione o usuário para uma página de recuperação de senha (onde ele possa informar seu e-mail para receber um link de reset, por exemplo).
+
+-   **O que melhorar:** Implementar um mecanismo de proteção contra ataques de força bruta.
+    -   **Por que melhorar:** Aumenta a segurança do sistema, prevenindo tentativas automatizadas e repetitivas de adivinhar senhas, que podem comprometer a conta de usuários.
+    -   **Como implementar:** Adicionar um contador de tentativas de login falhas por IP/usuário e, após um número predefinido de falhas (ex: 3-5), bloquear temporariamente o acesso ou introduzir um CAPTCHA.
+
+-   **O que melhorar:** Aperfeiçoar o feedback visual do formulário.
+    -   **Por que melhorar:** Torna a interface mais intuitiva e responsiva, guiando o usuário de forma mais eficaz durante o processo de login e indicando o status das interações.
+    -   **Como implementar:**
+        1.  Adicionar estados de foco/hover aos campos de texto e ao botão.
+        2.  Implementar validação de e-mail em tempo real (ex: formato `@domínio.com`).
+        3.  Usar ícones (ex: olho) para permitir alternar a visibilidade da senha.
+
+## RESUMO
+
+-   **Nota de Qualidade:** 3/10 (Pontuação baixa devido a nenhum dos critérios de aceitação serem visivelmente atendidos e a presença de problemas de usabilidade e segurança.)
+-   **Status:** Reprovado
+-   **Criterios Atendidos:** 0 de 3
+-   **Prioridade de Correcao:** Alta (Os critérios de aceitação de uma tela de login são fundamentais para a funcionalidade básica e segurança do sistema.)
+
+## CASOS DE TESTE SUGERIDOS
+
+-   **CT-01:** Tentar login com e-mail e senha válidos e corretos.
+    *   **Resultado Esperado:** O botão "Entrar" deve mudar para a cor verde após o preenchimento de ambos os campos (e-mail e senha). Após o clique, o usuário deve ser redirecionado com sucesso para a área logada do sistema.
+-   **CT-02:** Tentar login com um e-mail válido (formato correto) e uma senha incorreta.
+    *   **Resultado Esperado:** O botão "Entrar" deve mudar para a cor verde após o preenchimento de ambos os campos. Após o clique, o sistema deve exibir uma mensagem de erro clara e informativa, como "E-mail ou senha inválidos."
+-   **CT-03:** Tentar login com um e-mail que não está cadastrado no sistema e qualquer senha.
+    *   **Resultado Esperado:** O botão "Entrar" deve mudar para a cor verde após o preenchimento de ambos os campos. Após o clique, o sistema deve exibir uma mensagem de erro clara e informativa, como "Usuário não encontrado." ou "E-mail ou senha inválidos."
+-   **CT-04:** Tentar submeter o formulário com o campo "Email" vazio.
+    *   **Resultado Esperado:** O campo "Email" deve exibir uma mensagem de validação (ex: "Este campo é obrigatório") e o formulário não deve ser submetido. O botão "Entrar" deve permanecer na cor padrão (azul) ou desabilitado.
+-   **CT-05:** Tentar submeter o formulário com o campo "Senha" vazio, mas com o "Email" preenchido.
+    *   **Resultado Esperado:** O botão "Entrar" *não* deve ficar verde (pois nem todos os campos obrigatórios estão preenchidos). O campo "Senha" deve exibir uma mensagem de validação (ex: "Este campo é obrigatório") e o formulário não deve ser submetido.
+-   **CT-06:** Verificar o estado do botão "Entrar" com ambos os campos preenchidos com dados válidos.
+    *   **Resultado Esperado:** O botão "Entrar" deve estar na cor verde, conforme o critério de aceitação.
