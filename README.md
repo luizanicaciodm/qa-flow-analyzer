@@ -59,22 +59,35 @@ Simular o olhar de um QA na validação de sistemas, garantindo:
 
 ---
 
-📁 Estrutura do projeto
+## 📂 Estrutura do Projeto
 
-qa-flow-analyzer/
-│
-├── 📁 imagens/        ← prints para análise
-├── 📁 videos/         ← vídeos de fluxo
-├── 📁 relatorios/     ← relatórios gerados (.txt e .pdf)
-├── 📁 src/
-│   ├── analisador.py  ← lógica principal com IA
-│   └── pdf_report.py  ← gerador de PDF
-│
-├── app_web.py         ← interface web (Streamlit)
-├── .env               ← sua chave de API (não vai pro GitHub)
+```text
+qa-flow-analyzer
+├── 📁 imagens
+├── 📁 videos
+├── 📁 relatorios
+├── 📁 src
+│   ├── analisador.py
+│   └── pdf_report.py
+├── app_web.py
+├── .env
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
+
+### Componentes
+
+| Arquivo/Pasta | Descrição |
+|--------------|-----------|
+| `imagens/` | Capturas de tela para análise |
+| `videos/` | Vídeos dos fluxos a serem avaliados |
+| `relatorios/` | Relatórios gerados em TXT e PDF |
+| `src/analisador.py` | Motor principal de análise com IA |
+| `src/pdf_report.py` | Geração dos relatórios PDF |
+| `app_web.py` | Interface Web construída com Streamlit |
+| `.env` | Variáveis de ambiente e chave da API |
+```
 
 ---
 
